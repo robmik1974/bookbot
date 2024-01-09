@@ -1,5 +1,6 @@
 def main():
-    text = get_book_text()
+    book_path = "books/frankenstein.txt"
+    text = get_book_text(book_path)
     num_words = get_num_words(text=text)
     num_characters = get_num_characters(text)
 
@@ -33,8 +34,8 @@ def get_num_characters(text: str) -> dict[str, int]:
     return count_letters
 
 
-def get_book_text() -> str:
-    with open("books/frankenstein.txt") as f:
+def get_book_text(book_path: str) -> str:
+    with open(book_path) as f:
         return f.read()
 
 
